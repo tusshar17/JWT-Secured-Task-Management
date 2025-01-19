@@ -37,7 +37,7 @@ npm install
 
 ```
 PORT = 8000
-DB_URL = "mongodb+srv://<username>:<password>@cluster0.flcnn.mongodb.net/<db>?retryWrites=true&w=majority&appName=Cluster0"
+DB_URL = "mongodb+srv://<username>:<password>@<>.mongodb.net/<db>?retryWrites=true&w=majority&appName=Cluster0"
 
 JWT_SECRET_KEY =
 JWT_EXPIRES_IN = "7d"
