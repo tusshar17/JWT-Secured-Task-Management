@@ -1,11 +1,11 @@
 import mongoose, { mongo } from "mongoose";
 
 
-const taskSchema = new mongoose.Schema(
+const TaskSchema = new mongoose.Schema(
     {
         title: { type: String, required: true },
         description: { type: String, required: false},
-        status: { type: Boolean, required: true },
+        status: { type: String, enum: ["pending", "in-progress", "completed"], default: "pending"},
         userID: {type: mongoose.Schema.Types.ObjectId, ref: "User", required: true}
     },
     {
@@ -14,6 +14,6 @@ const taskSchema = new mongoose.Schema(
 )
 
 // Model
-const taskModel = mongoose.model("user", UserSchema)
+const taskModel = mongoose.model("task", TaskSchema)
 
-export default taskModelModel
+export default taskModel
