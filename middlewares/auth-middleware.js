@@ -1,11 +1,11 @@
 import jwt from 'jsonwebtoken'
-import UserModel from '../models/userModel'
+import UserModel from '../models/userModel.js'
 
 export const userIdentifier = async (req, res, next) => {
     try {
         // Getting token from the header
         const authHeader = req.headers.authorization
-        if (!authHeader || !authHeader.startswith("Bearer ")) {
+        if (!authHeader || !authHeader.startsWith("Bearer ")) {
             return res.status(401).json({
                 "status": "failed",
                 "message": "authentication failed."
