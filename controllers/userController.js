@@ -6,7 +6,6 @@ import {doHash, doHashValidation} from "../utils/hashing.js";
 class UserController {
     static userRegistration = async (req, res) => {
         const {name, email, password, confirm_password} = req.body
-
         // check if email already used
         const user = await UserModel.findOne({email:email})
         if (user) {
