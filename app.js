@@ -4,6 +4,7 @@ import express from 'express'
 import cors from 'cors'
 import connectDB from './config/connectdb.js'
 import userRoutes from './routes/userRoutes.js'
+import taskRoutes from './routes/taskRoutes.js'
 
 
 const app = express()
@@ -21,6 +22,7 @@ app.use(express.json())
 
 // Load Routes
 app.use("/api/user", userRoutes)
+app.use("/api/task", taskRoutes)
 
 // test server
 app.get('/', (req, res) => {
